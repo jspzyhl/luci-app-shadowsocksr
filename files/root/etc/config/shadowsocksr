@@ -35,4 +35,4 @@ config server_subscribe
 	option auto_update '0'
 
 config dns_poisoning
-	option enabled '0'
+	option method 'nil'

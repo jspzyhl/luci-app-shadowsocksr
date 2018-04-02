@@ -111,9 +111,8 @@ do
                     esac
                 done
                 CheckIPAddr $ssr_host
-                if [ $? -ne 0 ]; then
-                    ssr_hosts=($(nslookup $ssr_host | grep 'Address [1-9]' | awk '{print $3}'))
-                    
+                if [ $? -ne 0 ]; then # 如果地址不是IP 则解析IP
+                    ssr_hosts=($(dig $ssr_host a +short))
                     for ((i=0;i<${#ssr_hosts[@]};i++))
                     do
                         ssr_host=${ssr_hosts[i]}

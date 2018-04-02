@@ -195,8 +195,8 @@ get_dnsmasq_confdir() {
 dns_poisoning() {
 	local gfw_list=/etc/shadowsocksr/dnsmasq_gfwlist.conf
 	local gfw_list_tmp=$dnsmasq_confdir/dnsmasq_gfwlist.conf
-	if [ $(uci_get_by_type dns_poisoning enabled) -eq 1 -o $(uci_get_by_type access_control gfw_mode 0) -eq 1 ]; then
-		local method=$(uci_get_by_type dns_poisoning method)
+	local method=$(uci_get_by_type dns_poisoning method)
+	if [ $(uci_get_by_type dns_poisoning method) != "nil" ]; then
 		case "$method" in
 			cdns)
 				cdns -c /etc/cdns.json
@@ -235,7 +235,7 @@ dns_poisoning() {
 corn() {
 	[ -n "$(grep -w "/usr/share/shadowsocksr/subscribe.sh" /etc/crontabs/root)" ] && sed -i '/\/usr\/share\/shadowsocksr\/subscribe.sh/d' /etc/crontabs/root
 	[ $(uci_get_by_type server_subscribe auto_update 0) -eq 1 ] && echo "0 $(uci_get_by_type server_subscribe auto_update_time) * * * /usr/share/shadowsocksr/subscribe.sh" >> /etc/crontabs/root
-	[ -z "$(grep -w "/usr/share/shadowsocksr/update_chnroute.sh" /etc/crontabs/root)" ] && echo "0 0 * * 0 /usr/share/shadowsocksr/update_chnroute.sh" >> /etc/crontabs/root
+	[ -z "$(grep -w "/usr/share/shadowsocksr/update.sh" /etc/crontabs/root)" ] && echo "0 0 * * 0 /usr/share/shadowsocksr/update.sh" >> /etc/crontabs/root
 }
 start() {
 	pidof ssr-redir ssr-local ssr-tunnel >/dev/null && return 0
