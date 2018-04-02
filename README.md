@@ -31,6 +31,7 @@ OpenWrt LuCI for ShadowsocksR-libev
 `curl`             | 获取 DNS 域名污染列表和服务器订阅数据
 `coreutils-base64` | base64 解码 DNS 域名污染列表和服务器订阅数据
 `bash`             | 服务器订阅脚本使用 bash 解释器运行
+`bind-dig`         | 用于订阅脚本解析域名
 
 软件包不显式这些依赖，会根据用户安装的依赖启用相应的功能.
 
