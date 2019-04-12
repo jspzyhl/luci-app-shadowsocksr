@@ -47,7 +47,7 @@ DNS 防污染支持的软件包：`cdns`、`dns-forwarder`、`https_dns_proxy`�
 tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
 cd OpenWrt-SDK-ar71xx-*
 # Clone 项目
-git clone https://github.com/jspzyhl/luci-app-shadowsocksr.git package/luci-app-shadowsocks
+git clone https://github.com/jspzyhl/luci-app-shadowsocksr.git package/luci-app-shadowsocksr
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-shadowsocksr/tools/po2lmo
 make && sudo make install
