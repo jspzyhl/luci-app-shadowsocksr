@@ -4,7 +4,7 @@ OpenWrt LuCI for ShadowsocksR-libev
 简介
 ---
 
-本软件包是 [ShadowsocksR-libev][openwrt-shadowsocksr] 的 LuCI 控制界面
+本软件包是 [ShadowsocksR-libev](https://github.com/jspzyhl/openwrt-shadowsocksr) 的 LuCI 控制界面
 
 方便用户控制和使用「透明代理」「SOCKS5 代理」「端口转发」功能.
 
@@ -14,7 +14,7 @@ OpenWrt LuCI for ShadowsocksR-libev
 ---
 软件包的正常使用需要依赖 `iptables` 和 `ipset`.  
 软件包不显式依赖 `shadowsocksr-libev`, 会根据用户添加的可执行文件启用相应的功能.  
-可执行文件可通过安装 [ShadowsocksR-libev][openwrt-shadowsocksr] 中提供的 `shadowsocks-libev` 获得.  
+可执行文件可通过安装 [ShadowsocksR-libev](https://github.com/jspzyhl/openwrt-shadowsocksr) 中提供的 `shadowsocks-libev` 获得.  
 只有当文件存在时, 相应的功能才可被使用, 并显示相应的 LuCI 设置界面.  
 
  可执行文件    | 可选 | 功能        | TCP协议 | UDP协议 
@@ -58,6 +58,5 @@ make menuconfig
 make package/luci-app-shadowsocksr/compile V=99
 ```
 
- [openwrt-shadowsocksr]: https://github.com/Hill-98/shadowsocksr-libev_openwrt
 
 [dns-forwarder]: https://github.com/aa65535/openwrt-dns-forwarder
