@@ -25,13 +25,13 @@ OpenWrt LuCI for ShadowsocksR-libev
 
 注: 可执行文件在 `$PATH` 环境变量所表示的搜索路径中, 都可被正确调用.
 
-可选依赖               | 作用
--------------------|--------------------
-`dnsmasq-full`     | DNS 域名污染列表解析
-`curl`             | 获取 DNS 域名污染列表和服务器订阅数据
-`coreutils-base64` | base64 解码 DNS 域名污染列表和服务器订阅数据
-`bash`             | 服务器订阅脚本使用 bash 解释器运行
-`bind-dig`         | 用于订阅脚本解析域名
+可选依赖            | 包名               | 作用
+-------------------|--------------------|--------------------
+`dnsmasq-full`     |                    | DNS 域名污染列表解析
+`curl`             |PACKAGE_curl        | 获取 DNS 域名污染列表和服务器订阅数据
+`coreutils-base64` |PACKAGE_coreutils   | base64 解码 DNS 域名污染列表和服务器订阅数据（只需要选择coreutils-base64）
+`bash`             |PACKAGE_bash        | 服务器订阅脚本使用 bash 解释器运行
+`bind-dig`         |PACKAGE_bind-dig    | 用于订阅脚本解析域名
 
 软件包不显式这些依赖，会根据用户安装的依赖启用相应的功能.
 
